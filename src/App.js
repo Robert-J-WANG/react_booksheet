@@ -21,13 +21,14 @@ export default class App extends Component {
       alert('Book ID already exists');
       return;
     }
+    if ((book.name == "") || (book.id == "")) {
+      alert('Enter a book id and a book name');
+      return;
+    }
 
     const newBookList = [...bookList, book];
     this.setState({ bookList: newBookList });
   }
-
-
-
 
   deleteBook = (id) => {
     const { bookList } = this.state;
